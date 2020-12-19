@@ -9,7 +9,7 @@ Stack::Stack(int size)
 {
     data = new int[size];
     data_size = size;
-    top = 0;
+    top = -1;
 }
 
 Stack::~Stack()
@@ -42,9 +42,20 @@ void Stack::push(int element)
     }
     else
     {
-        data[top++] = element;
+        data[++top] = element;
     }
         
+}
+int Stack::peek()
+{
+    if(is_empty())
+    {
+        std::cout << "Stack is empty." << std::endl;
+        return -1;
+    }
+        
+    else
+        return data[top];
 }
 
 bool Stack::is_empty()
@@ -53,5 +64,5 @@ bool Stack::is_empty()
 }
 bool Stack::is_full()
 {   
-    return top == data_size;
+    return top == data_size-1;
 }
