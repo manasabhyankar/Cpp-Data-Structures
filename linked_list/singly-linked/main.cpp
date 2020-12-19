@@ -64,11 +64,44 @@ int main()
     // tail = ins2;
     //reset current pointer
     current = head;
+    /***********************************************/
+    /**************Delete node at head.*************/
+    /***********************************************/
+    //current is at the head
+    head = current->next;
+    delete current;
+    current = head;
+    /***********************************************/
+    /*************Delete node at index 3.***********/
+    /***********************************************/
+    for(int i=0; i<3; i++)
+    {
+        previous = current;
+        current = current->next;
+    }    
+    //we are now at index 3 and we shall delete the node
+    previous->next = current->next;
+    current->next = nullptr;
+    delete current;
+    current = head;
+    /***********************************************/
+    /**************Delete node at tail.*************/
+    /***********************************************/
+    while(current->next)
+    {
+        previous = current;
+        current = current->next;
+    }
+    current->next = nullptr;
+    previous->next = nullptr;
+    tail = previous;
+    delete current;
+    current = head;
     while(current)
     {
         cout << current->get_payload() << "\n";
         current = current->next;
     } 
-
+    current = head;
     return 0;
 }

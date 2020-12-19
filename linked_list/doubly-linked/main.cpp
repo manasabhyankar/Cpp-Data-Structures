@@ -68,14 +68,44 @@ int main()
         prev = current;
         current = current->next;
     }
-    cout << prev->get_payload() << " " << current->get_payload() << "\n";
     current->next = ins3;
     ins3->next = nullptr;
     ins3->previous = current;
     prev = current;
     current = current->next;
     tail = ins3;
-    cout << prev->get_payload() << " " << current->get_payload() << "\n";
+    current = head;
+    prev = head;
+    /**********************************************/
+    /*********Delete the node at the head.*********/
+    /**********************************************/
+    current = current->next;
+    delete prev;
+    head = current;
+    /***********************************************/
+    /*******Delete the node at index 3.*************/
+    /***********************************************/
+    for (size_t i = 0; i < 3; i++)
+    {
+        current = current->next;
+    }
+    current->previous->next = current->next;
+    current->next->previous = current->previous;
+    current->next = nullptr;
+    current->previous = nullptr;
+    delete current;
+    current = head;
+    /***********************************************/
+    /*******Delete the node at the tail.************/
+    /***********************************************/
+    while(current->next)
+    {
+        current = current->next;
+    }
+    current->previous->next = nullptr;
+    current->previous = nullptr;
+    current->next = nullptr;
+    delete current;
     current = head;
     while(current != nullptr)
     {
