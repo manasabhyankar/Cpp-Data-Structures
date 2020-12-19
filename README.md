@@ -1,2 +1,2 @@
 # Cpp-Data-Structures
-This is a sample entry
+A repo containing my implementation of common data structures for practice and mastery.
