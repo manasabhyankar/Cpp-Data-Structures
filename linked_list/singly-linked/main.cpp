@@ -20,5 +20,10 @@ int main()
     test.print_list();
     test.add_node(new Node(3), 3);
     test.print_list();
+    Node* f = test.search_node(2);
+    cout << f->get_payload() << endl;
+    Node* ff = test.search_node(199);
+    if(ff == NULL)
+        cout << "NULL" << endl;
     return 0;
 }

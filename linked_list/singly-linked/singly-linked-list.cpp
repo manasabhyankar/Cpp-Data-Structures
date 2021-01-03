@@ -156,3 +156,24 @@ void SinglyLinkedList::print_list()
     current = head;
     previous = head;
 }
+/*
+Search for a node with a specific value.
+*/
+Node* SinglyLinkedList::search_node(int value)
+{
+    current = head;
+    previous = head;
+    while(current != NULL)
+    {
+        if(current->get_payload() == value)
+        {
+            cout << "Found a node with the value: " << value
+            << "." << endl;
+            return current;
+        }
+        current = current->next;
+    }
+    cout << "Did not find a node with the value: " << value
+    << "." << endl;
+    return nullptr;
+}

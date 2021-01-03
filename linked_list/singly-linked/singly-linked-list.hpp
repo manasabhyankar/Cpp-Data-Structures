@@ -1,7 +1,4 @@
 #include "node.hpp"
-#include <vector>
-
-using namespace std;
 class SinglyLinkedList
 {
     public:
@@ -17,5 +14,5 @@ class SinglyLinkedList
         void add_node(Node* n, int idx = -1);
         void delete_node(int idx = -1);
         void print_list();
-        Node* search_node();
+        Node* search_node(int value);
 };
