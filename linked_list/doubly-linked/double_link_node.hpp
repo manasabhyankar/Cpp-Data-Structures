@@ -3,7 +3,8 @@ class Node
     public:
         Node* next;
         Node* previous;
-        Node() : previous(nullptr), next(nullptr){};
+        Node();
+        Node(int value);
         int get_payload();
         void set_payload(int n);
     private:
