@@ -7,9 +7,10 @@ private:
 public:
     /* data members*/
     BST(TreeNode* start = nullptr);
-    TreeNode* root;
+    TreeNode* root = nullptr;
     /* functions */
     void insert_node(TreeNode* n = nullptr);
+    TreeNode* search_node(int value);
     /* destructor */
     ~BST();
 };
@@ -50,6 +51,10 @@ void BST::insert_node(TreeNode* n)
             parent = parent->right;
         }
     }
+}
+TreeNode* BST::search_node(int value)
+{
+    
 }
 BST::~BST()
 {
